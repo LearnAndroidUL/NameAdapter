@@ -22,11 +22,16 @@ public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder
 
     public void addName(){
         mNames.add(0,getRandomName());
-//        notifyDataSetChanged();  // works OK
+//      notifyDataSetChanged();  // works OK, but we want animation
         notifyItemInserted(0);
         notifyItemRangeChanged(0, mNames.size());
         mRecyclerView.scrollToPosition(0);
+    }
 
+    public void removeName(int position){
+        mNames.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(0, mNames.size());
     }
 
     private String getRandomName() {
@@ -68,6 +73,13 @@ public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder
             super(itemView);
             mNameTextView = itemView.findViewById(R.id.name);
             mDescriptionTextView = itemView.findViewById(R.id.description);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    removeName(getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 }
