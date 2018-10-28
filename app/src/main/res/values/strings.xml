@@ -4,4 +4,29 @@
     <string name="name_default">Name</string>
     <string name="description_default">description</string>
     <string name="description_template">I\'m #%d</string>
+    <string-array name="name_list">
+        <item>David Beck</item>
+        <item>David Berry</item>
+        <item>Ian Berry</item>
+        <item>Niall Broderick</item>
+        <item>Conor Clancy</item>
+        <item>Mary Cronin</item>
+        <item>Matthew Daniels</item>
+        <item>Paul Delaney</item>
+        <item>Debra Donovan</item>
+        <item>Mark Egan</item>
+        <item>Anna Hudakova</item>
+        <item>Brian Hyland</item>
+        <item>Emer Kennedy Ozdemir</item>
+        <item>Senan O\'Callaghan</item>
+        <item>Thomas O\'Connor</item>
+        <item>Cahir O\'Leary</item>
+        <item>Deirdre O\'Loughlin</item>
+        <item>Adrian O\'Sullivan</item>
+        <item>Istvan Orosz</item>
+        <item>Mark Quigley</item>
+        <item>Deirdre Shanahan</item>
+        <item>Kevin St John</item>
+        <item>Sergejs Sushinskis</item>
+    </string-array>
 </resources>

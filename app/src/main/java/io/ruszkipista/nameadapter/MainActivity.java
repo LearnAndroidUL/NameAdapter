@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         // connect RecyclerView with our NameAdapter
-        final NameAdapter nameAdapter = new NameAdapter();
+        final NameAdapter nameAdapter = new NameAdapter(this);
         recyclerView.setAdapter(nameAdapter);
 
         nameAdapter.addName();

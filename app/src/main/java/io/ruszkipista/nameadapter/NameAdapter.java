@@ -15,6 +15,9 @@ import java.util.Random;
 public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder>{
     private List<String> mNames = new ArrayList<>();
     Random mRandom = new Random();
+    Context mContext;
+
+    public NameAdapter(Context context) {mContext = context;}
 
     public void addName(){
         mNames.add(0,getRandomName());
@@ -22,13 +25,9 @@ public class NameAdapter extends RecyclerView.Adapter<NameAdapter.NameViewHolder
     }
 
     private String getRandomName() {
-        String[] names = new String[] {
-                "David Beck", "David Berry", "Ian Berry", "Niall Broderick", "Conor Clancy", "Mary Cronin",
-                "Matthew Daniels", "Paul Delaney", "Debra Donovan", "Mark Egan", "Anna Hudakova",
-                "Brian Hyland", "Emer Kennedy Ozdemir", "Senan O'Callaghan", "Thomas O'Connor",
-                "Cahir O'Leary", "Deirdre O'Loughlin", "Adrian O'Sullivan", "Istvan Orosz", "Mark Quigley",
-                "Deirdre Shanahan", "Kevin St John", "Sergejs Sushinskis"
-        };
+        // get class name list from string resource
+        String[] names = mContext.getResources().getStringArray(R.array.name_list);
+
         return names[mRandom.nextInt(names.length)];
     }
 
